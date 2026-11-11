@@ -1,0 +1,11 @@
+keyleash.mail.env
+keyleash.mail.env.*
+state/
+dist/
+__pycache__/
+*.pyc
+*.bak
+*.sicherung-*
+*.mp4
+res-*.log
+keyleash.env.neu

@@ -1,0 +1,31 @@
+keyleash
+Copyright (c) 2026 Christian Scheller
+SPDX-License-Identifier: AGPL-3.0-or-later (Volltext / full text: LICENSE)
+
+Ausnahme / Exception: webdemo/db.php und webdemo/db-error.php sind WordPress-Drop-ins unter
+GPL-2.0-or-later. / webdemo/db.php and webdemo/db-error.php are WordPress drop-ins under GPL-2.0-or-later.
+
+Projektseite / Project page: https://keyleash.de
+
+keyleash Lab – Fremdsoftware / Third-party software
+
+Der Lab-Code enthält keine fremden Quelltexte. Er ruft die folgenden Programme und Bibliotheken
+auf, die getrennt installiert werden und unter ihren eigenen Lizenzen stehen.
+The lab code contains no third-party source code. It calls the following programs and libraries,
+which are installed separately and remain under their own licenses.
+
+  tpm2-tools ............... BSD-3-Clause
+  tpm2-tss / tpm2-abrmd .... BSD-2-Clause
+  swtpm / libtpms .......... BSD-3-Clause (nur Software-TPM / software TPM only)
+  Python cryptography ...... Apache-2.0 OR BSD-3-Clause
+  OpenSSL .................. Apache-2.0
+  OpenSSH .................. BSD-style
+  curl ..................... curl license (MIT-style)
+  MariaDB .................. GPL-2.0 (eigenständiges Programm / separate program, Web-Demo)
+  PHP ...................... PHP License v3.01 (Web-Demo)
+  WordPress ................ GPL-2.0-or-later (wird bei der Einrichtung heruntergeladen / downloaded at setup)
+  xrdp, FreeRDP ............ Apache-2.0 (RDP-Demo)
+  socat .................... GPL-2.0 (eigenständiges Programm / separate program, RDP-Demo)
+  Xvfb (X.Org) ............. MIT/X11
+  Nitrokey NetHSM .......... angesprochen über die REST-API / used via its REST API
+  vhs ...................... MIT (nur Videoaufnahme / video recording only)

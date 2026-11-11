@@ -1,0 +1,38 @@
+# AppArmor-Profil für den keyleash-Signaturdienst (Linux Mint 22 / Ubuntu 24.04, AppArmor 4)
+# Wird von systemd über AppArmorProfile= angewendet.
+abi <abi/4.0>,
+include <tunables/global>
+
+profile keyleash-signer flags=(attach_disconnected) {
+  include <abstractions/base>
+  include <abstractions/python>
+  include <abstractions/nameservice>
+
+  /usr/bin/python3* ix,
+  /usr/bin/tpm2 ix,
+  /usr/bin/tpm2_* ix,
+  /opt/keyleash/ r,
+  /opt/keyleash/** r,
+  /etc/keyleash/** r,
+  /etc/tpm2-tss/** r,
+  /usr/lib/@{multiarch}/libtss2-* mr,
+
+  /dev/tpmrm0 rw,
+  /var/lib/keyleash/ r,
+  /var/lib/keyleash/** rwk,
+  /run/keyleash/ rw,
+  /run/keyleash/** rwk,
+  /tmp/ r,
+  /tmp/** rwk,
+  owner @{PROC}/@{pid}/** r,
+  @{PROC}/sys/vm/overcommit_memory r,
+
+  network unix stream,
+  network inet stream,
+  network inet6 stream,
+
+  # Kein Debugger-Zugriff in beide Richtungen, kein Zugriff auf Home-Verzeichnisse
+  deny ptrace,
+  deny @{HOME}/** rwklx,
+  signal (receive) peer=unconfined,
+}
