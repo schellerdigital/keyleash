@@ -9,3 +9,4 @@ __pycache__/
 *.mp4
 res-*.log
 keyleash.env.neu
+.DS_Store
