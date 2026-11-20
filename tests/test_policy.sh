@@ -2,6 +2,7 @@
 # Copyright (c) 2026 Christian Scheller · keyleash · SPDX-License-Identifier: AGPL-3.0-or-later
 # Prüft, dass die Python-Policy-Berechnung des Servers exakt dem entspricht,
 # was das TPM in Trial-Sessions berechnet. Ändert nichts am TPM.
+# Comment added katopp-png
 source "$(dirname "$0")/../demos/common.sh"
 T=$(mktemp -d); trap 'rm -rf $T' EXIT
 openssl genrsa -out $T/a.key 2048 2>/dev/null; openssl rsa -in $T/a.key -pubout -out $T/a.pub 2>/dev/null
